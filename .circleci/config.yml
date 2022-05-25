@@ -16,6 +16,8 @@ jobs:
       - checkout
       - run:
           command: "pwd"
+      - run:    
+          command: "ls"
             
 
 # Invoke jobs via workflows
