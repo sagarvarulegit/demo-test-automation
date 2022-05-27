@@ -10,7 +10,7 @@ jobs:
           name: "install npm webserver"
           command: "npm install http-server"
       - run:    
-          command: "http-server"
+          command: "npx http-server"
       - run:
           name: "run tests"
           command: "cd sample-test-java && mvn clean test"    
