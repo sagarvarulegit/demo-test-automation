@@ -18,15 +18,16 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class LoginTest {
-    static ChromeDriver driver;
+    static WebDriver driver;
 
     @Test
     public void TestVerifyLoginTest() throws IOException {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         // driver = new RemoteWebDriver(new URL("http://localhost:4444"), options);
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(options);
+        WebDriverManager wdm = WebDriverManager.chromedriver().browserInDocker()
+            .enableVnc().enableRecording();
+        driver = wdm.create();
         driver.get("http://localhost:1234/sample-login.html");
         driver.findElement(By.id("input_username")).clear();
         driver.findElement(By.id("input_username")).sendKeys("Sagar");
