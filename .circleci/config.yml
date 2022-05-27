@@ -1,7 +1,7 @@
 
 version: 2.1
 jobs:
-  run-test:
+  build-website:
     docker:
       - image: cimg/openjdk:15.0-browsers
     steps:
@@ -9,14 +9,14 @@ jobs:
       - run:    
           name: "install npm webserver"
           command: "npm install http-server"
-      - run:    
+      - run:
+          background: true  
           command: "npx http-server"
       - run:
           name: "run tests"
-          command: "cd sample-test-java && mvn clean test"    
+          command: "cd sample-test-java && mvn clean test"  
+
   # test-website:
-  #   docker:
-  #     - image: cimg/openjdk:15.0-browsers
   #   steps:
   #     - checkout
   #     - run:
