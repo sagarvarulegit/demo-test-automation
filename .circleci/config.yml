@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:    
           name: "install npm webserver"
-          command: "npm install -g http-server"
+          command: "npm install http-server"
       - run:    
           command: "http-server"
       - run:
