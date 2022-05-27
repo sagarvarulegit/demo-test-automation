@@ -1,26 +1,28 @@
 
 version: 2.1
 jobs:
-  build-website:
-    docker:
-      - image: cimg/python:3.10.4
-    steps:
-      - checkout
-      - run:    
-          name: "find ip"
-          command: "ifconfig"
-      - run:    
-          command: "python -m http.server 1234"
-  test-website:
+  run-test:
     docker:
       - image: cimg/openjdk:15.0-browsers
     steps:
       - checkout
+      - run:    
+          name: "install npm webserver"
+          command: "npm install -g http-server"
+      - run:    
+          command: "http-server"
       - run:
-          command: "cd sample-test-java && mvn clean test"             
+          name: "run tests"
+          command: "cd sample-test-java && mvn clean test"    
+  # test-website:
+  #   docker:
+  #     - image: cimg/openjdk:15.0-browsers
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         command: "cd sample-test-java && mvn clean test"             
 
 workflows:
-  say-hello-workflow:
+  run-tests-workflow:
     jobs:
-      - build-website
-      - test-website
+      - run-test
