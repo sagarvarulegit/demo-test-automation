@@ -18,9 +18,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: "cd sample-test-java"
-      - run:
-          command: "mvn clean test"              
+          command: "cd sample-test-java && mvn clean test"             
           
             
 
