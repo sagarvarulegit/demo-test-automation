@@ -14,7 +14,7 @@ jobs:
           command: "python -m http.server 1234"
   test-website:
     docker:
-      - image: cimg/openjdk:1.14-browsers
+      - image: cimg/openjdk-browsers
     steps:
       - checkout
       - run:
