@@ -20,6 +20,7 @@ public class LoginTest {
 
     @Test
     public void TestVerifyLoginTest() throws IOException {
+        #sample test
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         // driver = new RemoteWebDriver(new URL("http://localhost:4444"), options);
