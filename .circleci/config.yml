@@ -1,11 +1,18 @@
 
 version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@1.1
 jobs:
   run-test:
     docker:
       - image: cimg/openjdk:15.0-browsers
     steps:
+      - browser-tools/install-browser-tools
       - checkout
+      - run: |
+          node --version
+          java --version
+          google-chrome --version
       - run:    
           name: "install npm webserver"
           command: "npm install http-server"
