@@ -33,8 +33,8 @@ public class LoginTest {
         driver.findElement(By.id("input_username")).sendKeys("Sagar");
 
         File f = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-        System.out.println("ARTIFACT:::::::::: " + System.getProperty("user.dir") + "//screenshot.png");
-        FileUtils.copyFile(f, new File(System.getProperty("user.dir") + "//screenshot.png"));
+        System.out.println("ARTIFACT:::::::::: " + System.getProperty("user.dir") + "/screenshot.png");
+        FileUtils.copyFile(f, new File(System.getProperty("user.dir") + "/screenshot.png"));
     }
 
     @AfterClass
