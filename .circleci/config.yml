@@ -10,6 +10,7 @@ jobs:
       - browser-tools/install-browser-tools
       - checkout
       - run: |
+          pwd
           node --version
           java --version
           google-chrome --version
