@@ -24,7 +24,7 @@ jobs:
           name: "run tests"
           command: "cd sample-test-java && mvn clean test"  
       - store_artifacts:
-          path: /home/circleci/project/sample-website/sample-test-java/screenshot.png
+          path: /home/circleci/project/sample-test-java/screenshot.png
 
   # test-website:
   #   steps:
