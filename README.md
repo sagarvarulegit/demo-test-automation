@@ -3,8 +3,9 @@ This project is built to showcase knowledge and type of work done in my professi
 
 Project is divided into modules each highlight particular testing technology
 
+|||
+|-------------------|-------------------------------------------------------------|
 |sample-test-java   | Showcase Selenium-Java-Cucumber framework for Web           |
 |demo-karate-sagarv | Showcase API-Testing using Karate-framework implementation  |
-
 ### Run Tests
 ```mvn clean test```
