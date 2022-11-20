@@ -27,14 +27,9 @@ jobs:
           command: "cd sample-test-java && mvn clean test"  
       - store_artifacts:
           path: /home/circleci/project/sample-test-java/target/cucumber-report/testreport.html
-
-  # test-website:
-  #   steps:
-  #     - checkout
-  #     - run:
-  #         command: "cd sample-test-java && mvn clean test"             
-
+                   
 workflows:
   run-tests-workflow:
     jobs:
+      - build-app
       - run-test
