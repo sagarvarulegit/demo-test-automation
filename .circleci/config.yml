@@ -9,7 +9,7 @@ jobs:
     steps:
       - browser-tools/install-browser-tools
       - checkout
-      - run: |
+      - run:
           pwd
           node --version
           java --version
@@ -21,6 +21,7 @@ jobs:
           background: true  
           command: "npx http-server"
   run-test:
+    steps:
       - run:
           name: "run tests"
           command: "cd sample-test-java && mvn clean test"  
