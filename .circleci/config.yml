@@ -3,7 +3,7 @@ version: 2.1
 orbs:
   browser-tools: circleci/browser-tools@1.1
 jobs:
-  run-test:
+  build-app:
     docker:
       - image: cimg/openjdk:15.0-browsers
     steps:
@@ -20,6 +20,7 @@ jobs:
       - run:
           background: true  
           command: "npx http-server"
+  run-test:
       - run:
           name: "run tests"
           command: "cd sample-test-java && mvn clean test"  

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -33,4 +34,13 @@ public class BasePageObject {
     protected String getText(WebElement element) {
         return wait.until(ExpectedConditions.elementToBeClickable(element)).getText();
     }
+
+    protected void selectValueFromDropDown(WebElement element, String text){
+        Select select = new Select(element);
+        select.selectByValue("value");
+        select.selectByIndex(0);
+        select.selectByVisibleText("text");
+    }
 }
+
+

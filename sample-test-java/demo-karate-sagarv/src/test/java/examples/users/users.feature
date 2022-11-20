@@ -8,6 +8,7 @@ Feature: sample karate test script
       Given path 'users'
       When method get
       Then status 200
+      
 
     * def first = response[0]
 
