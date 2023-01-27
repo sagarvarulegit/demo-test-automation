@@ -12,5 +12,5 @@ Project is divided into modules each highlight particular testing technology
 Tests are run in Circle-Ci pipeline on one of their internal docker images available. 
 Workflow and Job information can be found in circle-ci configuration file:  ```config.yml```
 
-### Run Tests
+### Run All Tests
 ```mvn clean test```

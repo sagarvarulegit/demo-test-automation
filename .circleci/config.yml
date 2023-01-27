@@ -35,3 +35,4 @@ workflows:
     jobs:
       - build-app
       - run-test
+      requires: build-app
